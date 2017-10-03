@@ -15,7 +15,6 @@
 		}
 	},
 	"require": {
-		"makinacorpus/php-bloom": "2.0.2",
 		"php": ">=5.5.9"
 	},
 	"require-dev": {
