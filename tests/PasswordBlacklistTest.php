@@ -4,7 +4,7 @@ namespace Wikimedia\PasswordBlacklist\Test;
 
 use Wikimedia\PasswordBlacklist\PasswordBlacklist;
 
-class PasswordBlacklistTest extends \PHPUnit_Framework_TestCase {
+class PasswordBlacklistTest extends \PHPUnit\Framework\TestCase {
 
 	public static function getBlacklistedPasswords() {
 		$lines = [];
