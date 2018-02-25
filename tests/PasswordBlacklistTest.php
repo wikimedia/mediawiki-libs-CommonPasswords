@@ -4,6 +4,9 @@ namespace Wikimedia\PasswordBlacklist\Test;
 
 use Wikimedia\PasswordBlacklist\PasswordBlacklist;
 
+/**
+ * @covers \Wikimedia\PasswordBlacklist\PasswordBlacklist
+ */
 class PasswordBlacklistTest extends \PHPUnit\Framework\TestCase {
 
 	public static function getBlacklistedPasswords() {
@@ -27,7 +30,6 @@ class PasswordBlacklistTest extends \PHPUnit\Framework\TestCase {
 	 * Tests that all the passwords in the original 10_million_password_list_top_100000.txt file
 	 * are in the BloomFilter.
 	 *
-	 * @covers \Wikimedia\PasswordBlacklist\PasswordBlacklist::isBlacklisted
 	 * @param string $password
 	 */
 	function testBlacklistedPassword() {
@@ -49,7 +51,6 @@ class PasswordBlacklistTest extends \PHPUnit\Framework\TestCase {
 	 * Tests a few passwords that aren't in the blacklist
 	 *
 	 * @dataProvider getNonBlacklistedPasswords
-	 * @covers \Wikimedia\PasswordBlacklist\PasswordBlacklist::isBlacklisted
 	 * @param string $password
 	 */
 	function testNonBlacklistedPasswords( $password ) {
