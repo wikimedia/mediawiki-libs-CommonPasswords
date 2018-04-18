@@ -13,7 +13,12 @@ class PasswordBlacklist {
 		static $filter = null;
 		if ( $filter === null ) {
 			$filter = BloomFilter::initFromJson(
-				json_decode( file_get_contents( __DIR__ . '/blacklist.json' ), true )
+				json_decode(
+					file_get_contents(
+						__DIR__ . '/' . ( PHP_INT_SIZE === 8 ? 'blacklist.json' : 'blacklist-x86.json' )
+					),
+					true
+				)
 			);
 		}
 		return $filter;

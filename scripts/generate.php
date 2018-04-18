@@ -7,7 +7,8 @@ require_once dirname( __DIR__ ) . '/vendor/autoload.php';
 $filter = BloomFilter::init( 100000, 0.001 );
 
 $inputFileName = __DIR__ . '/data/10_million_password_list_top_100000.txt';
-$outputFileName = dirname( __DIR__ ) . '/src/blacklist.json';
+$outputFileName = dirname( __DIR__ ) . '/src/' .
+	( PHP_INT_SIZE === 8 ? 'blacklist.json' : 'blacklist-x86.json' );
 
 if ( !file_exists( $inputFileName ) ) {
 	echo "{$inputFileName} doesn't exist\n";
