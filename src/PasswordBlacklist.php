@@ -15,7 +15,7 @@ class PasswordBlacklist {
 			$filter = BloomFilter::initFromJson(
 				json_decode(
 					file_get_contents(
-						__DIR__ . '/' . ( PHP_INT_SIZE === 8 ? 'blacklist.json' : 'blacklist-x86.json' )
+						__DIR__ . '/' . ( PHP_INT_SIZE === 8 ? 'blacklist-x64.json' : 'blacklist-x86.json' )
 					),
 					true
 				)
