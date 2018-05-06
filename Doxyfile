@@ -13,6 +13,7 @@ INPUT                  = README.md src/
 FILE_PATTERNS          = *.php
 RECURSIVE              = YES
 USE_MDFILE_AS_MAINPAGE = README.md
+FILTER_PATTERNS        = *md=build/doxygen_escape.sh
 HTML_DYNAMIC_SECTIONS  = YES
 GENERATE_TREEVIEW      = YES
 TREEVIEW_WIDTH         = 250
@@ -23,4 +24,4 @@ DOT_FONTSIZE           = 10
 TEMPLATE_RELATIONS     = YES
 CALL_GRAPH             = NO
 CALLER_GRAPH           = NO
-DOT_MULTI_TARGETS = YES
+DOT_MULTI_TARGETS      = YES
