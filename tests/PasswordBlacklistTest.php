@@ -41,6 +41,7 @@ class PasswordBlacklistTest extends \PHPUnit\Framework\TestCase {
 
 	public static function getNonBlacklistedPasswords() {
 		return [
+			[ 'testwikijenkinspass' ],
 			[ 'MediaWiki' ],
 			[ 'Wikipedia' ],
 			[ 'Wikimedia' ],
