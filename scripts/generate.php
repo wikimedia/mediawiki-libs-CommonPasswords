@@ -2,6 +2,10 @@
 
 use Pleo\BloomFilter\BloomFilter;
 
+if ( PHP_SAPI !== 'cli' ) {
+	die( "Run me from the command line please.\n" );
+}
+
 require_once dirname( __DIR__ ) . '/vendor/autoload.php';
 
 $filter = BloomFilter::init( 100000, 0.001 );
