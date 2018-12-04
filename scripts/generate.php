@@ -8,7 +8,7 @@ if ( PHP_SAPI !== 'cli' ) {
 
 require_once dirname( __DIR__ ) . '/vendor/autoload.php';
 
-$filter = BloomFilter::init( 100000, 0.001 );
+$filter = BloomFilter::init( 100000, 0.000001 );
 
 $inputFileName = __DIR__ . '/data/10_million_password_list_top_100000.txt';
 $outputFileName = dirname( __DIR__ ) . '/src/' .
