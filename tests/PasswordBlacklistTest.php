@@ -45,6 +45,9 @@ class PasswordBlacklistTest extends \PHPUnit\Framework\TestCase {
 			[ 'MediaWiki' ],
 			[ 'Wikipedia' ],
 			[ 'Wikimedia' ],
+
+			// Passwords that are known to have been false positives
+			[ 'yell0w lighter peeler' ],
 		];
 	}
 
