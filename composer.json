@@ -11,12 +11,8 @@
 	],
 	"autoload": {
 		"psr-4": {
-			"Wikimedia\\CommonPasswords\\": "src/CommonPasswords/",
-			"Wikimedia\\PasswordBlacklist\\": "src/PasswordBlacklist/"
+			"Wikimedia\\CommonPasswords\\": "src/CommonPasswords/"
 		}
-	},
-	"replace": {
-		"wikimedia/password-blacklist": "^0.1.4"
 	},
 	"require": {
 		"pleonasm/bloom-filter": "1.0.2",
