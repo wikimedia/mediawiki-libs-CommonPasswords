@@ -1,10 +1,10 @@
 <?php
 
-namespace Wikimedia\PasswordBlacklist;
+namespace Wikimedia\CommonPasswords;
 
 use Pleo\BloomFilter\BloomFilter;
 
-class PasswordBlacklist {
+class CommonPasswords {
 
 	/**
 	 * @return BloomFilter
@@ -15,7 +15,7 @@ class PasswordBlacklist {
 			$filter = BloomFilter::initFromJson(
 				json_decode(
 					file_get_contents(
-						__DIR__ . '/' . ( PHP_INT_SIZE === 8 ? 'blacklist-x64.json' : 'blacklist-x86.json' )
+						__DIR__ . '/' . ( PHP_INT_SIZE === 8 ? 'common-x64.json' : 'common-x86.json' )
 					),
 					true
 				)
@@ -25,10 +25,10 @@ class PasswordBlacklist {
 	}
 
 	/**
-	 * @param string $password Password to check if in the Bloom Filter
+	 * @param string $password Password to check if it's considered common
 	 * @return bool
 	 */
-	public static function isBlacklisted( $password ) {
+	public static function isCommon( $password ) {
 		return self::getFilter()->exists( $password );
 	}
 }

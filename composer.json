@@ -1,8 +1,8 @@
 {
-	"name": "wikimedia/password-blacklist",
-	"description": "PasswordBlacklist for the 100,000 most used passwords",
+	"name": "wikimedia/common-passwords",
+	"description": "List of the 100,000 most commonly used passwords",
 	"license": "MIT",
-	"homepage": "https://www.mediawiki.org/wiki/PasswordBlacklist",
+	"homepage": "https://www.mediawiki.org/wiki/CommonPasswords",
 	"authors": [
 		{
 			"name": "Sam Reed",
@@ -11,8 +11,12 @@
 	],
 	"autoload": {
 		"psr-4": {
-			"Wikimedia\\PasswordBlacklist\\": "src/"
+			"Wikimedia\\CommonPasswords\\": "src/CommonPasswords/",
+			"Wikimedia\\PasswordBlacklist\\": "src/PasswordBlacklist/"
 		}
+	},
+	"replace": {
+		"wikimedia/password-blacklist": "^0.1.4"
 	},
 	"require": {
 		"pleonasm/bloom-filter": "1.0.2",

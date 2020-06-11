@@ -1,15 +1,15 @@
 <?php
 
-namespace Wikimedia\PasswordBlacklist\Test;
+namespace Wikimedia\CommonPasswords\Test;
 
-use Wikimedia\PasswordBlacklist\PasswordBlacklist;
+use Wikimedia\CommonPasswords\CommonPasswords;
 
 /**
- * @covers \Wikimedia\PasswordBlacklist\PasswordBlacklist
+ * @covers \Wikimedia\CommonPasswords\CommonPasswords
  */
-class PasswordBlacklistTest extends \PHPUnit\Framework\TestCase {
+class CommonPasswordsTest extends \PHPUnit\Framework\TestCase {
 
-	public static function getBlacklistedPasswords() {
+	public static function getCommonPasswords() {
 		$lines = [];
 		$file = fopen(
 			dirname( __DIR__ ) . '/scripts/data/10_million_password_list_top_100000.txt',
@@ -32,14 +32,14 @@ class PasswordBlacklistTest extends \PHPUnit\Framework\TestCase {
 	 *
 	 * @param string $password
 	 */
-	function testBlacklistedPassword() {
+	function testCommonPasswords() {
 		// We don't use a data provider here to avoid creating 100,000 test cases.
-		foreach ( self::getBlacklistedPasswords() as $password ) {
-			$this->assertTrue( PasswordBlacklist::isBlacklisted( $password ) );
+		foreach ( self::getCommonPasswords() as $password ) {
+			$this->assertTrue( CommonPasswords::isCommon( $password ) );
 		}
 	}
 
-	public static function getNonBlacklistedPasswords() {
+	public static function getNotCommonPasswords() {
 		return [
 			[ 'testwikijenkinspass' ],
 			[ 'MediaWiki' ],
@@ -52,12 +52,12 @@ class PasswordBlacklistTest extends \PHPUnit\Framework\TestCase {
 	}
 
 	/**
-	 * Tests a few passwords that aren't in the blacklist
+	 * Tests a few passwords that aren't in the common list
 	 *
-	 * @dataProvider getNonBlacklistedPasswords
+	 * @dataProvider getNotCommonPasswords
 	 * @param string $password
 	 */
-	function testNonBlacklistedPasswords( $password ) {
-		$this->assertFalse( PasswordBlacklist::isBlacklisted( $password ) );
+	function testNotCommonPasswords( $password ) {
+		$this->assertFalse( CommonPasswords::isCommon( $password ) );
 	}
 }
