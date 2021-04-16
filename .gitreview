@@ -1,5 +1,5 @@
 [gerrit]
 host=gerrit.wikimedia.org
 port=29418
-project=mediawiki/libs/PasswordBlacklist.git
+project=mediawiki/libs/CommonPasswords.git
 track=1

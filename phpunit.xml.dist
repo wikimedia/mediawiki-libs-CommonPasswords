@@ -2,7 +2,7 @@
 	beStrictAboutTestsThatDoNotTestAnything="true"
 	beStrictAboutOutputDuringTests="true">
 	<testsuites>
-		<testsuite name="PasswordBlacklist Tests">
+		<testsuite name="CommonPasswords Tests">
 			<directory>./tests</directory>
 		</testsuite>
 	</testsuites>

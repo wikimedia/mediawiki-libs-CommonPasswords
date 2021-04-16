@@ -1,10 +1,10 @@
-# Doxyfile for PasswordBlacklist
+# Doxyfile for CommonPasswords
 #
 # See <http://www.stack.nl/~dimitri/doxygen/manual/config.html>
 # for help on how to use this file to configure Doxygen.
 
-PROJECT_NAME           = "PasswordBlacklist"
-PROJECT_BRIEF          = "PasswordBlacklist for the 100,000 most used passwords"
+PROJECT_NAME           = "CommonPasswords"
+PROJECT_BRIEF          = "CommonPasswords for the 100,000 most used passwords"
 OUTPUT_DIRECTORY       = doc
 JAVADOC_AUTOBRIEF      = YES
 QT_AUTOBRIEF           = YES
