@@ -30,7 +30,7 @@ class CommonPasswordsTest extends \PHPUnit\Framework\TestCase {
 	 * Tests that all the passwords in the original 10_million_password_list_top_100000.txt file
 	 * are in the BloomFilter.
 	 */
-	function testCommonPasswords() {
+	public function testCommonPasswords() {
 		// We don't use a data provider here to avoid creating 100,000 test cases.
 		foreach ( self::getCommonPasswords() as $password ) {
 			$this->assertTrue( CommonPasswords::isCommon( $password ) );
@@ -55,7 +55,7 @@ class CommonPasswordsTest extends \PHPUnit\Framework\TestCase {
 	 * @dataProvider getNotCommonPasswords
 	 * @param string $password
 	 */
-	function testNotCommonPasswords( $password ) {
+	public function testNotCommonPasswords( $password ) {
 		$this->assertFalse( CommonPasswords::isCommon( $password ) );
 	}
 }
