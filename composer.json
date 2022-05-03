@@ -15,7 +15,7 @@
 		}
 	},
 	"require": {
-		"pleonasm/bloom-filter": "1.0.2",
+		"pleonasm/bloom-filter": "1.0.3",
 		"php": ">=7.2.9"
 	},
 	"require-dev": {
