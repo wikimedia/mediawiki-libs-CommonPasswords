@@ -11,7 +11,7 @@
 	],
 	"autoload": {
 		"psr-4": {
-			"Wikimedia\\CommonPasswords\\": "src/CommonPasswords/"
+			"Wikimedia\\CommonPasswords\\": "src/"
 		}
 	},
 	"require": {

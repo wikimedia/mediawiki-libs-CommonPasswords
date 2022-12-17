@@ -11,7 +11,7 @@ require_once dirname( __DIR__ ) . '/vendor/autoload.php';
 $filter = BloomFilter::init( 100000, 0.000001 );
 
 $inputFileName = __DIR__ . '/data/10_million_password_list_top_100000.txt';
-$outputFileName = dirname( __DIR__ ) . '/src/CommonPasswords/' .
+$outputFileName = dirname( __DIR__ ) . '/src/' .
 	( PHP_INT_SIZE === 8 ? 'common-x64.json' : 'common-x86.json' );
 
 if ( !file_exists( $inputFileName ) ) {
