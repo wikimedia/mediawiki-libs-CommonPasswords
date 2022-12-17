@@ -2,12 +2,13 @@
 
 namespace Wikimedia\CommonPasswords\Test;
 
+use PHPUnit\Framework\TestCase;
 use Wikimedia\CommonPasswords\CommonPasswords;
 
 /**
  * @covers \Wikimedia\CommonPasswords\CommonPasswords
  */
-class CommonPasswordsTest extends \PHPUnit\Framework\TestCase {
+class CommonPasswordsTest extends TestCase {
 
 	public static function getCommonPasswords() {
 		$lines = [];
