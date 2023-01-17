@@ -7,9 +7,10 @@ use Pleo\BloomFilter\BloomFilter;
 class CommonPasswords {
 
 	/**
+	 * @internal
 	 * @return BloomFilter
 	 */
-	private static function getFilter() {
+	public static function getFilter() {
 		static $filter = null;
 		if ( $filter === null ) {
 			$filter = BloomFilter::initFromJson(
