@@ -1,12 +1,7 @@
-.editorconfig export-ignore
-.gitattributes export-ignore
-.gitignore export-ignore
-.gitreview export-ignore
+.* export-ignore
 Doxyfile export-ignore
 composer.json export-ignore
-.phpcs.xml export-ignore
 phpunit.xml.dist export-ignore
-.phan/ export-ignore
 build/ export-ignore
 scripts/ export-ignore
 tests/ export-ignore
