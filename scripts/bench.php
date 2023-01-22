@@ -9,8 +9,8 @@ echo "PHP " . PHP_VERSION . "\n";
 
 $t = microtime( true );
 CommonPasswords::getFilter();
-$t = ( microtime( true ) - $t ) * 1000;
-echo "Load bloom filter: {$t}s\n";
+$t = round( microtime( true ) - $t, 6 ) * 1000;
+echo "Load bloom filter: {$t}ms\n";
 
 $passwords = [
 	'password' => true,
@@ -20,10 +20,10 @@ $passwords = [
 foreach ( $passwords as $p => $v ) {
 	$t = microtime( true );
 	$isCommon = CommonPasswords::isCommon( $p );
-	$t = ( microtime( true ) - $t ) * 1000;
-	if ( $v ) {
-		echo "Time to check a password that is in the filter: {$t}s\n";
+	$t = round( microtime( true ) - $t, 6 ) * 1000;
+	if ( $isCommon ) {
+		echo "Time to check a password that is in the filter: {$t}ms\n";
 	} else {
-		echo "Time to check a password that is not in the filter: {$t}s\n";
+		echo "Time to check a password that is not in the filter: {$t}ms\n";
 	}
 }
