@@ -1,43 +1,35 @@
 <?php
 
-use Pleo\BloomFilter\BloomFilter;
-
 if ( PHP_SAPI !== 'cli' ) {
 	die( "Run me from the command line please.\n" );
 }
 
-require_once dirname( __DIR__ ) . '/vendor/autoload.php';
-
-$filter = BloomFilter::init( 100000, 0.000001 );
-
 $inputFileName = __DIR__ . '/data/10_million_password_list_top_100000.txt';
-$outputFileName = dirname( __DIR__ ) . '/src/' .
-	( PHP_INT_SIZE === 8 ? 'common-x64.json' : 'common-x86.json' );
+$outputFileName = dirname( __DIR__ ) . '/src/common.php';
 
 if ( !file_exists( $inputFileName ) ) {
 	echo "{$inputFileName} doesn't exist\n";
-	return 1;
+	exit( 1 );
 }
 
 $file = fopen( $inputFileName, 'r' );
 
 if ( !$file ) {
 	echo "Cannot open {$inputFileName}\n";
-	return 1;
+	exit( 1 );
 }
 
+$code = "<?php return [\n";
 while ( !feof( $file ) ) {
 	$line = trim( fgets( $file ) );
 	if ( !$line ) {
 		continue;
 	}
-	$filter->add( $line );
+	$code .= var_export( $line, true ) . " => 1,\n";
 }
 fclose( $file );
+$code .= "\n];\n";
 
-file_put_contents(
-	$outputFileName,
-	json_encode( $filter )
-);
+file_put_contents( $outputFileName, $code );
 
-echo "Serialised file {$outputFileName} created\n";
+echo "Created " . basename( $outputFileName ) . "\n";

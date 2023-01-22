@@ -2,27 +2,18 @@
 
 namespace Wikimedia\CommonPasswords;
 
-use Pleo\BloomFilter\BloomFilter;
-
 class CommonPasswords {
 
 	/**
 	 * @internal
-	 * @return BloomFilter
+	 * @return array
 	 */
-	public static function getFilter() {
-		static $filter = null;
-		if ( $filter === null ) {
-			$filter = BloomFilter::initFromJson(
-				json_decode(
-					file_get_contents(
-						__DIR__ . '/' . ( PHP_INT_SIZE === 8 ? 'common-x64.json' : 'common-x86.json' )
-					),
-					true
-				)
-			);
+	public static function getData() {
+		static $data = null;
+		if ( $data === null ) {
+			$data = require __DIR__ . '/common.php';
 		}
-		return $filter;
+		return $data;
 	}
 
 	/**
@@ -30,6 +21,6 @@ class CommonPasswords {
 	 * @return bool
 	 */
 	public static function isCommon( $password ) {
-		return self::getFilter()->exists( $password );
+		return isset( self::getData()[ $password ] );
 	}
 }

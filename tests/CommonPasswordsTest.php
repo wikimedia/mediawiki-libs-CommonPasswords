@@ -28,11 +28,10 @@ class CommonPasswordsTest extends TestCase {
 	}
 
 	/**
-	 * Tests that all the passwords in the original 10_million_password_list_top_100000.txt file
-	 * are in the BloomFilter.
+	 * Confirm presence of all passwords in the original 10_million_password_list_top_100000.txt file.
 	 */
 	public function testCommonPasswords() {
-		// We don't use a data provider here to avoid creating 100,000 test cases.
+		// We don't use a data provider here to avoid creating many test cases.
 		foreach ( self::getCommonPasswords() as $password ) {
 			$this->assertTrue( CommonPasswords::isCommon( $password ) );
 		}
