@@ -1,4 +1,4 @@
-## Unreleased
+## v0.5.1
 
 * build: Updating mediawiki/mediawiki-codesniffer to 46.0.0 (libraryupgrader)
 * build: Updating mediawiki/mediawiki-phan-config to 0.15.1 (libraryupgrader)
