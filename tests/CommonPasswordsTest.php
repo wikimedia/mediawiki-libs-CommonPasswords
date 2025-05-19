@@ -37,7 +37,7 @@ class CommonPasswordsTest extends TestCase {
 		}
 	}
 
-	public static function getNotCommonPasswords() {
+	public static function provideNotCommonPasswords() {
 		return [
 			[ 'testwikijenkinspass' ],
 			[ 'MediaWiki' ],
@@ -52,7 +52,7 @@ class CommonPasswordsTest extends TestCase {
 	/**
 	 * Tests a few passwords that aren't in the common list
 	 *
-	 * @dataProvider getNotCommonPasswords
+	 * @dataProvider provideNotCommonPasswords
 	 * @param string $password
 	 */
 	public function testNotCommonPasswords( $password ) {
