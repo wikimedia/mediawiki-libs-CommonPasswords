@@ -4,7 +4,7 @@ require_once dirname( __DIR__ ) . '/src/CommonPasswords.php';
 
 use Wikimedia\CommonPasswords\CommonPasswords;
 
-echo "PHP " . PHP_VERSION . "\n";
+echo "PHP " . PHP_VERSION . " " . ( PHP_INT_SIZE === 8 ? "x64" : "x86" ) . "\n";
 
 $t = microtime( true );
 CommonPasswords::getData();
