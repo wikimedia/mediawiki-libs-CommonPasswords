@@ -5,7 +5,7 @@ if ( PHP_SAPI !== 'cli' ) {
 }
 
 $inputFileName = __DIR__ . '/data/10_million_password_list_top_100000.txt';
-$outputFileName = dirname( __DIR__ ) . '/src/common.php';
+$outputFileName = __DIR__ . '/../data/common.php';
 
 if ( !file_exists( $inputFileName ) ) {
 	echo "{$inputFileName} doesn't exist\n";

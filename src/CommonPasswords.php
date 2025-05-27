@@ -11,7 +11,7 @@ class CommonPasswords {
 	public static function getData() {
 		static $data = null;
 		if ( $data === null ) {
-			$data = require __DIR__ . '/common.php';
+			$data = require __DIR__ . '/../data/common.php';
 		}
 		return $data;
 	}
