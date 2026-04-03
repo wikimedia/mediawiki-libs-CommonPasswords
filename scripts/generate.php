@@ -1,4 +1,5 @@
 <?php
+declare( strict_types = 1 );
 
 if ( PHP_SAPI !== 'cli' ) {
 	die( "Run me from the command line please.\n" );
