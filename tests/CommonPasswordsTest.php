@@ -17,8 +17,12 @@ class CommonPasswordsTest extends TestCase {
 			'r'
 		);
 		while ( !feof( $file ) ) {
-			$line = trim( fgets( $file ) );
-			if ( !$line ) {
+			$line = fgets( $file );
+			if ( $line === false ) {
+				continue;
+			}
+			$line = trim( $line );
+			if ( $line === '' ) {
 				continue;
 			}
 			$lines[] = $line;
