@@ -7,9 +7,8 @@ class CommonPasswords {
 
 	/**
 	 * @internal
-	 * @return array
 	 */
-	public static function getData() {
+	public static function getData(): array {
 		static $data = null;
 		if ( $data === null ) {
 			$data = require __DIR__ . '/../data/common.php';
@@ -18,10 +17,9 @@ class CommonPasswords {
 	}
 
 	/**
-	 * @param string $password Password to check if it's considered common
-	 * @return bool
+	 * Check if a given password is considered common
 	 */
-	public static function isCommon( $password ) {
+	public static function isCommon( string $password ): bool {
 		return isset( self::getData()[ $password ] );
 	}
 }

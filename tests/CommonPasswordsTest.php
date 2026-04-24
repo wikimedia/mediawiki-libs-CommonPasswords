@@ -11,7 +11,7 @@ use Wikimedia\CommonPasswords\CommonPasswords;
  */
 class CommonPasswordsTest extends TestCase {
 
-	public static function getCommonPasswords() {
+	public static function getCommonPasswords(): array {
 		$lines = [];
 		$file = fopen(
 			dirname( __DIR__ ) . '/scripts/data/10_million_password_list_top_100000.txt',
@@ -35,14 +35,14 @@ class CommonPasswordsTest extends TestCase {
 	/**
 	 * Confirm presence of all passwords in the original 10_million_password_list_top_100000.txt file.
 	 */
-	public function testCommonPasswords() {
+	public function testCommonPasswords(): void {
 		// We don't use a data provider here to avoid creating many test cases.
 		foreach ( self::getCommonPasswords() as $password ) {
 			$this->assertTrue( CommonPasswords::isCommon( $password ) );
 		}
 	}
 
-	public static function provideNotCommonPasswords() {
+	public static function provideNotCommonPasswords(): array {
 		return [
 			[ 'testwikijenkinspass' ],
 			[ 'MediaWiki' ],
@@ -58,9 +58,8 @@ class CommonPasswordsTest extends TestCase {
 	 * Tests a few passwords that aren't in the common list
 	 *
 	 * @dataProvider provideNotCommonPasswords
-	 * @param string $password
 	 */
-	public function testNotCommonPasswords( $password ) {
+	public function testNotCommonPasswords( string $password ): void {
 		$this->assertFalse( CommonPasswords::isCommon( $password ) );
 	}
 }
